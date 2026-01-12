@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Kartheka ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+body{
+  background:linear-gradient(to bottom, #ffdee9, #b5fffc);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:40px;
+}
+h1{
+  font-family:'Great Vibes', cursive;
+  font-size:4rem;
+  color:#e91e63;
+}
+p{
+  font-size:1.2rem;
+  max-width:700px;
+  margin-top:20px;
+}
+button{
+  margin:20px;
+  padding:15px 40px;
+  border:none;
+  border-radius:50px;
+  background:#e91e63;
+  color:white;
+  font-size:1.1rem;
+  cursor:pointer;
+  transition:0.3s;
+  position:relative;
+}
+button:hover{
+  background:#c2185b;
+}
+#noBtn{
+  background:#555;
+}
+#hearts{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+.heart{
+  position:absolute;
+  font-size:24px;
+  animation: float 5s linear infinite;
+  color:#ff4d6d;
+}
+@keyframes float{
+  0%{transform:translateY(100vh); opacity:1;}
+  100%{transform:translateY(-10vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Section 1 -->
+<section>
+  <h1>Madhan ❤️ Kartheka</h1>
+  <p>
+    Kartheka, you are not just a part of my life…  
+    you are my smile, my peace, and my favorite thought every day.
+  </p>
+</section>
+
+<!-- Section 2 -->
+<section>
+  <h1>Why I Love You</h1>
+  <p>
+    I love the way you make everything feel lighter.  
+    I love how you understand me even when I don’t speak.  
+    With you, life feels warm, calm, and beautiful.
+  </p>
+</section>
+
+<!-- Section 3 -->
+<section>
+  <h1>My Promise</h1>
+  <p>
+    I promise to stand with you in every happiness,  
+    and hold your hand in every difficult moment.  
+    With you, I want all my tomorrows.
+  </p>
+</section>
+
+<!-- Proposal Section -->
+<section>
+  <h1>Kartheka 💖</h1>
+  <p style="font-size:1.5rem;margin-top:30px;">
+    Will you be mine forever?
+  </p>
+  <button id="yesBtn" onclick="yesClicked()">YES 💕</button>
+  <button id="noBtn">NO 😜</button>
+</section>
+
+<div id="hearts"></div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover", () => {
+  const x = Math.random() * (window.innerWidth - 150);
+  const y = Math.random() * (window.innerHeight - 100);
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+function yesClicked(){
+  for(let i=0;i<120;i++){
+    let heart = document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+2)+"s";
+    document.getElementById("hearts").appendChild(heart);
+    setTimeout(()=>heart.remove(),5000);
+  }
+  alert("Kartheka, Madhan loves you forever 💕");
+}
+</script>
+
+</body>
+</html>
