@@ -1,148 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>For Kartheka ❤️</title>
+<title>Madhan ❤️ Kartheka</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
-}
 body{
-  background:linear-gradient(to bottom, #ffdee9, #b5fffc);
-  min-height:100vh;
-  overflow-x:hidden;
+    margin:0;
+    background:#f6f7d7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:'Poppins', sans-serif;
 }
-section{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  text-align:center;
-  padding:40px;
+
+.container{
+    text-align:center;
+    max-width:800px;
+    padding:40px;
 }
+
 h1{
-  font-family:'Great Vibes', cursive;
-  font-size:4rem;
-  color:#e91e63;
+    font-family:'Great Vibes', cursive;
+    font-size:50px;
+    color:#e91e63;
 }
-p{
-  font-size:1.2rem;
-  max-width:700px;
-  margin-top:20px;
+
+.letter{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+    font-size:18px;
+    line-height:1.8;
+    color:#333;
 }
-button{
-  margin:20px;
-  padding:15px 40px;
-  border:none;
-  border-radius:50px;
-  background:#e91e63;
-  color:white;
-  font-size:1.1rem;
-  cursor:pointer;
-  transition:0.3s;
-  position:relative;
-}
-button:hover{
-  background:#c2185b;
-}
-#noBtn{
-  background:#555;
-}
-#hearts{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  pointer-events:none;
-}
+
 .heart{
-  position:absolute;
-  font-size:24px;
-  animation: float 5s linear infinite;
-  color:#ff4d6d;
+    font-size:30px;
+    color:#e91e63;
+    margin-bottom:10px;
 }
-@keyframes float{
-  0%{transform:translateY(100vh); opacity:1;}
-  100%{transform:translateY(-10vh); opacity:0;}
+
+button{
+    padding:12px 30px;
+    font-size:20px;
+    border:none;
+    border-radius:30px;
+    background:red;
+    color:white;
+    cursor:pointer;
+    position:absolute;
+}
+
+#yes{
+    position:relative;
+    margin-top:20px;
+}
+
+#no{
+    margin-top:20px;
+}
+
+img{
+    width:260px;
+    border-radius:20px;
+    margin-bottom:15px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Section 1 -->
-<section>
-  <h1>Madhan ❤️ Kartheka</h1>
-  <p>
-    Kartheka, you are not just a part of my life…  
-    you are my smile, my peace, and my favorite thought every day.
-  </p>
-</section>
+<!-- PAGE 1: Love Letter -->
+<div class="container" id="page1">
+    <div class="heart">❤️ 💕 ❤️</div>
+    <h1>Kartheka</h1>
+    <div class="letter">
+        Kartheka,<br><br>
+        I want to tell you something honestly from my heart.<br><br>
 
-<!-- Section 2 -->
-<section>
-  <h1>Why I Love You</h1>
-  <p>
-    I love the way you make everything feel lighter.  
-    I love how you understand me even when I don’t speak.  
-    With you, life feels warm, calm, and beautiful.
-  </p>
-</section>
+        From the day we started talking, you slowly became very special to me.  
+        Your smile, your care, and the way you understand me mean more than you know.<br><br>
 
-<!-- Section 3 -->
-<section>
-  <h1>My Promise</h1>
-  <p>
-    I promise to stand with you in every happiness,  
-    and hold your hand in every difficult moment.  
-    With you, I want all my tomorrows.
-  </p>
-</section>
+        I’ve fallen for you, truly. <b>I love you.</b><br><br>
 
-<!-- Proposal Section -->
-<section>
-  <h1>Kartheka 💖</h1>
-  <p style="font-size:1.5rem;margin-top:30px;">
-    Will you be mine forever?
-  </p>
-  <button id="yesBtn" onclick="yesClicked()">YES 💕</button>
-  <button id="noBtn">NO 😜</button>
-</section>
+        But I don’t want to assume anything from your side.  
+        I respect your feelings, so I want to ask you gently…<br><br>
 
-<div id="hearts"></div>
+        <b>Do you have feelings for me too?</b><br><br>
+
+        Whatever your answer is, I will respect it.  
+        I just wanted to be honest with my heart today.
+    </div>
+
+    <br><br>
+    <button onclick="goNext()">Continue 💖</button>
+</div>
+
+<!-- PAGE 2: Yes / No -->
+<div class="container" id="page2" style="display:none;">
+    <img src="https://i.postimg.cc/9M2p3n2r/cute-love.png">
+    <h1>Do you love me?</h1>
+    <br>
+    <button id="yes" onclick="yes()">Yes ❤️</button>
+    <button id="no">No 😜</button>
+</div>
+
+<!-- PAGE 3: I knew it -->
+<div class="container" id="page3" style="display:none;">
+    <img src="https://i.postimg.cc/D0d7mQ3b/cute-hug.png">
+    <h1>I knew it 😍</h1>
+</div>
 
 <script>
-const noBtn = document.getElementById("noBtn");
+function goNext(){
+    document.getElementById("page1").style.display="none";
+    document.getElementById("page2").style.display="block";
+}
 
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - 150);
-  const y = Math.random() * (window.innerHeight - 100);
-  noBtn.style.position = "absolute";
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
+const no = document.getElementById("no");
+
+no.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    no.style.left = x + "px";
+    no.style.top = y + "px";
 });
 
-function yesClicked(){
-  for(let i=0;i<120;i++){
-    let heart = document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML="💖";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=(Math.random()*3+2)+"s";
-    document.getElementById("hearts").appendChild(heart);
-    setTimeout(()=>heart.remove(),5000);
-  }
-  alert("Kartheka, Madhan loves you forever 💕");
+function yes(){
+    document.getElementById("page2").style.display="none";
+    document.getElementById("page3").style.display="block";
 }
 </script>
 
 </body>
 </html>
-
